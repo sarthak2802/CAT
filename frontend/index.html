@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CAT Question Solver</title>
+    <script>
+        async function solveQuestion() {
+            const questionInput = document.getElementById('question').value;
+            const response = await fetch('/solve-question', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ question: questionInput })
+            });
+            const data = await response.json();
+            document.getElementById('result').innerText = data.answer;
+        }
+    </script>
+</head>
+<body>
+    <h1>CAT Question Solver</h1>
+    <textarea id="question" rows="4" cols="50" placeholder="Enter your question here..."></textarea>
+    <br>
+    <button onclick="solveQuestion()">Get Solution</button>
+    <h2>Answer and Explanation:</h2>
+    <div id="result"></div>
+</body>
+</html>

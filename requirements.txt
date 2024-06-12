@@ -1,0 +1,5 @@
+Flask
+openai
+transformers
+datasets
+torch
