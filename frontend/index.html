@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAT Question Solver</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>CAT Question Solver</h1>
-        <form id="question-form">
-            <textarea id="question" rows="4" placeholder="Enter your question here..."></textarea>
-            <button type="submit">Get Solution</button>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">CAT Question Solver</h1>
+        <form id="question-form" class="mb-4">
+            <div class="form-group">
+                <label for="subject"> Select Subject</label>
+                <select class="form-control" id="subject">
+                    <option value="math">Math</option>
+                    <option value="logic">Logic</option>
+                    <option value="english">English</option>
+                </select>
+            </div>
+           
+            <div class="form-group">
+                <label for="question">Enter your question here</label>
+                <textarea id="question" class="form-control" rows="4" placeholder="Enter your question here..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Get Solution</button>
         </form>
-        <div id="result" class="result"></div>
+        <div id="result" class="result alert alert-info" role="alert"></div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
